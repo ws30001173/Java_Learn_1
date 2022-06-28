@@ -116,11 +116,69 @@ public class Main {
     myObj3.setName("John");
     System.out.println(myObj3.getName());
 
-    // Packages
-    Scanner myObj4 = new Scanner(System.in);
-    System.out.println("Enter username");
+    // Scanner package
+    try (Scanner myObj4 = new Scanner(System.in)) {
+      System.out.println("Enter ur lucky number");
 
-    String username = myObj4.nextLine();
-    System.out.println("Username is: " + username);
+      int lucky_number = myObj4.nextInt();
+      System.out.println("Number is: " + lucky_number);
+    }
+
+    // Animal classes
+    Dog myDog = new Dog();
+    Cat myCat = new Cat();
+    myDog.animalSound();
+    myCat.animalSound();
+    myCat.sleep();
+    // Interface method
+    wolf myWolf = new wolf();
+    myWolf.animalWalk();
+    myWolf.animalEat();
+    // Enum
+    for (Level myFinal : Level.values()) {
+      System.out.println(myFinal);
+    }
+
+    OuterClass outerObj = new OuterClass();
+    OuterClass.InnerClass innerObj = outerObj.new InnerClass();
+    System.out.println(outerObj.x + innerObj.y);
+    System.out.println(innerObj.myInnerMethod());
+    // static class InnerClass,
+    // OuterClass.InnerClass innerObj = new OuterClass.InnerClass();
+  }
+}
+
+// Inheritance
+class Vehicle {
+  protected String brand = "Ford";
+
+  public void honk() {
+    System.out.println("Beep");
+  }
+}
+
+class Car extends Vehicle {
+  private String modelName = "Mustang";
+
+  public static void main(String[] args) {
+
+    // Create a myCar object
+    Car myCar = new Car();
+
+    myCar.honk();
+    System.out.println(myCar.brand + " " + myCar.modelName);
+  }
+}
+
+// nest classes
+class OuterClass {
+  int x = 10;
+
+  class InnerClass {
+    int y = 5;
+
+    public int myInnerMethod() {
+      return x - y;
+    }
   }
 }
