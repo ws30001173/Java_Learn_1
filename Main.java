@@ -36,7 +36,7 @@ public class Main {
     x = y;
   }
 
-  // private, get and set
+  // private, get and set ?
   private String name;
 
   public String getName() {
@@ -121,7 +121,7 @@ public class Main {
       System.out.println("Enter ur lucky number");
 
       int lucky_number = myObj4.nextInt();
-      System.out.println("Number is: " + lucky_number);
+      System.out.println("Number is: " + lucky_number); // sigle quotes not allowed
     }
 
     // Animal classes
@@ -180,5 +180,18 @@ class OuterClass {
     public int myInnerMethod() {
       return x - y;
     }
+  }
+}
+
+// Wrapper classes
+class MyWrapperClass {
+  public static void main(String[] args) {
+    Integer myInt = 5;
+    Double myDouble = 5.99;
+    Character myChar = 'a';
+    String myString = myInt.toString();
+    System.out.println(myString.length());
+    System.out.println(myDouble.doubleValue());
+    System.out.println(myChar.charValue());
   }
 }
