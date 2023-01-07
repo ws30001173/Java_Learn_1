@@ -36,7 +36,7 @@ public class Main {
     x = y;
   }
 
-  // private, get and set ?
+  // private, get and set ? set => get
   private String name;
 
   public String getName() {
